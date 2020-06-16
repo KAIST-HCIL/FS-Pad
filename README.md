@@ -19,12 +19,12 @@ youngbo.shim@kaist.ac.kr
     + 6 * Bolt M1.6 (2.5 mm)
     + 4 * Bolt M2 (10 mm)
   - **Printable parts**
-    + Module body
-    + X axis guide
-    + X axis motor mount
-    + Y axis guide
-    + Y axis motor mount
-  - **CAD file** (Created with Autodesk Fusion 360)
+    + [Module body](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Module%20body.stl)
+    + [X axis guide](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/X%20axis%20guide.stl)
+    + [X axis motor mount](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/X%20axis%20motor%20mount.stl)
+    + [Y axis guide](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Y%20axis%20guide.stl)
+    + [Y axis motor mount](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Y%20axis%20motor%20mount.stl)
+  - **[CAD file](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/FS%20module%20Xbox%20fit%20v25.f3d)** (Created with Autodesk Fusion 360)
   
 ## Circuitry
   - **Components needed**
@@ -34,9 +34,9 @@ youngbo.shim@kaist.ac.kr
     + Voltage regulator (LM1117)
     + 4 * 10k Ohm resistors
     + 1 mF capacitor
-  - **Schematic** (Created with Autodesk EAGLE)
+  - **[Schematic](https://github.com/YoungboShim/FS-Pad/blob/master/circuitry/FSPad_sch.sch)** (Created with Autodesk EAGLE)
   
 ## Firmware
-firmware.ino
+**[firmware.ino](https://github.com/YoungboShim/FS-Pad/blob/master/firmware/firmware.ino)**
 * Upload the firmware through [Teensyduino](https://www.pjrc.com/teensy/td_download.html).
-* You could find out some test scripts and explanations in the firmware directory.
+* You could find out some test scripts and explanations in the [firmware directory](https://github.com/YoungboShim/FS-Pad/tree/master/firmware).
