@@ -24,8 +24,8 @@ youngbo.shim@kaist.ac.kr
     + [X axis motor mount](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/X%20axis%20motor%20mount.stl)
     + [Y axis guide](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Y%20axis%20guide.stl)
     + [Y axis motor mount](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Y%20axis%20motor%20mount.stl)
-  - **[CAD file](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/FS%20module%20Xbox%20fit%20v25.f3d)** (Created with Autodesk Fusion 360)
-  
+  - **[CAD file](https://github.com/KAIST-HCIL/FS-Pad/blob/master/CAD%20files/FS%20Module.f3d)** (Created with Autodesk Fusion 360)
+
 ## Circuitry
   - **Components needed**
     + Teensy 3.6
@@ -35,7 +35,7 @@ youngbo.shim@kaist.ac.kr
     + 4 * 10k Ohm resistors
     + 1 mF capacitor
   - **[Schematic](https://github.com/YoungboShim/FS-Pad/blob/master/circuitry/FSPad_sch.sch)** (Created with Autodesk EAGLE)
-  
+
 ## Firmware
 **[firmware.ino](https://github.com/YoungboShim/FS-Pad/blob/master/firmware/firmware.ino)**
 * Upload the firmware through [Teensyduino](https://www.pjrc.com/teensy/td_download.html).
