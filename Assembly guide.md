@@ -27,7 +27,7 @@ We used a SLA 3D printer ([Form 3](https://formlabs.com/3d-printers/form-3/)). P
 
 - **Stick - laser cut**<br>
 We laser cut stainless steel to produce sticks with low friction and durability. You should grind the sharp edges to fit the stick with the components before assembly.
-  + [Stick]() (.dxf file)
+  + [Stick](/CAD%20files/Stick.dxf) (.dxf file)
 
 <br>
 
