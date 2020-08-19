@@ -2,6 +2,7 @@
 ## Preparation
 - **Components needed**<br>
 Modifying the components will require you to directly modify the CAD files to fit the 3D printable parts.
+![Components](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/components.jpg "Required components and parts for making the force feedback thumbstick module.")
   + 2 * Coreless motor (16DCT Athlonix 219E) [[Site]](https://www.portescap.com/en/products/brush-dc-motors/athlonix-motors/16dct-athlonix-precious-metal-brush-dc-motor)
   + 2 * Rotary potentiometer (Took apart from a Xbox One controller's thumbstick module) [[Site]](https://www.aliexpress.com/item/33011575369.html?spm=a2g0s.9042311.0.0.42674c4dC97u9J)
   + 2 * Large spur gear (70 teeth, modulus 0.3, diameter 21.45 mm, width 1.2 mm) [[Site]](https://ko.aliexpress.com/item/4000099888614.html?spm=a2g0o.detail.1000014.45.234470a0vl6pO6&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.14976.178076.0&scm_id=1007.14976.178076.0&scm-url=1007.14976.178076.0&pvid=82aaac0b-55b4-41d3-aa16-17b92ed123fd&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.14976.178076.0,pvid:82aaac0b-55b4-41d3-aa16-17b92ed123fd,tpp_buckets:668%230%23131923%2358_668%23808%237756%23631_668%23888%233325%2317_4976%230%23178076%230_4976%232711%237538%23352_4976%233223%2310815%237_4976%233104%239653%235_4976%233141%239887%234_668%232846%238116%23949_668%232717%237561%23318__668%233422%2315392%23468)
@@ -10,7 +11,7 @@ Modifying the components will require you to directly modify the CAD files to fi
   + 2 * Shaft holder M1.5
   + 6 * Bolt M1.6 (2.5 mm)
   + 4 * Bolt M2 (10 mm)
-  
+
 <br>
 
 - **Printable parts**<br>
@@ -22,7 +23,7 @@ We used a SLA 3D printer ([Form 3](https://formlabs.com/3d-printers/form-3/)). P
   + [Y axis motor mount](https://github.com/YoungboShim/FS-Pad/blob/master/CAD%20files/Y%20axis%20motor%20mount.stl)
   + **[CAD file](https://github.com/KAIST-HCIL/FS-Pad/blob/master/CAD%20files/FS%20Module.f3d)** (Created with Autodesk Fusion 360)
 
-<br> 
+<br>
 
 - **Stick - laser cut**<br>
 We laser cut stainless steel to produce sticks with low friction and durability. You should grind the sharp edges to fit the stick with the components before assembly.
@@ -37,15 +38,25 @@ You may need tools listed below while assembling the parts.
   + Rotary tool
   + Instant glue
   + Sandpaper
- 
+
 <br>
 
 ## Assembling process
-  1. Use the tap to make threads on the module body and Y axis guide as indicated below.
+  1. Use the tap to make threads on the module body and X axis guide as indicated below.
+  ![Module body and X axis guide with thread holes indicated.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly1.jpg)
   2. Stick the shafts with the large spur gears, and then attach the gears with the axes guide parts. Note that aligning the shaft and the guide part is important, since this determines the inner friction.
+  ![Axes guide parts with large spur gears attached.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly2.jpg)
   3. Install the stick inside the X axis guide (7mm flat M2 bolt). Ensure that the stick moves freely with minimum friction. Try to loosen the bolt or grind the stick if the stick hardly moves.
+  ![Stick placing inside the X axis guide part.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly3.jpg)
   4. Cross the axes guide parts and fit into the module body.
+  ![Axes guides fit inside the module body.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly4.jpg)
   5. Push in the potentiometers until they click into the module body. Check if the tips of the axes guides are well inserted.
+  ![Module body with the potentiometers attached.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly5.jpg)
   6. Connect the motors with the motor mounts (M1.6 bolts).
-  7. Connect the motor mounts with the module body (M2 bolts). Check if the stick moves smoothly inside the working space (It may get stuck in diagonal border area inside the module body, but it's OK since the stick won't use that area during actuation).
-  8. Put the stick cap on.
+  ![Two motors with motor mounts attached for each.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly6.jpg)
+  7. Put the shaft holders first.
+  ![Shaft holders put on the shafts.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly7.jpg)
+  8. Connect the motor mounts with the module body (M2 bolts). Check if the stick moves smoothly inside the working space (It may get stuck in diagonal border area inside the module body, but it's OK since the stick won't use that area during actuation).
+  ![Module body and motors connected.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly8.jpg)
+  9. Put the stick cap on.
+  ![Stick cap added on the module body's stick.](https://github.com/KAIST-HCIL/FS-Pad/blob/temporary/images/assembly9.jpg)
