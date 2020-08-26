@@ -1,8 +1,8 @@
 # FS module assembly guide
 ## Preparation
+![](/images/components.jpg)
 - **Components needed**<br>
 Modifying the components will require you to directly modify the CAD files to fit the 3D printable parts.
-![](/temporary/images/components.jpg)
   + 2 * Coreless motor (16DCT Athlonix 219E) [[Site]](https://www.portescap.com/en/products/brush-dc-motors/athlonix-motors/16dct-athlonix-precious-metal-brush-dc-motor)
   + 2 * Rotary potentiometer (Took apart from a Xbox One controller's thumbstick module) [[Site]](https://www.aliexpress.com/item/33011575369.html?spm=a2g0s.9042311.0.0.42674c4dC97u9J)
   + 2 * Large spur gear (70 teeth, modulus 0.3, diameter 21.45 mm, width 1.2 mm) [[Site]](https://ko.aliexpress.com/item/4000099888614.html?spm=a2g0o.detail.1000014.45.234470a0vl6pO6&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.14976.178076.0&scm_id=1007.14976.178076.0&scm-url=1007.14976.178076.0&pvid=82aaac0b-55b4-41d3-aa16-17b92ed123fd&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.14976.178076.0,pvid:82aaac0b-55b4-41d3-aa16-17b92ed123fd,tpp_buckets:668%230%23131923%2358_668%23808%237756%23631_668%23888%233325%2317_4976%230%23178076%230_4976%232711%237538%23352_4976%233223%2310815%237_4976%233104%239653%235_4976%233141%239887%234_668%232846%238116%23949_668%232717%237561%23318__668%233422%2315392%23468)
