@@ -1,4 +1,4 @@
-# Fumbstick Teensy 3.6 firmware
+# FS-Pad Teensy 3.6 firmware
 
 ## How to use?
 Set parameters of *firmware.ino*. Then just upload the code to a Teensy board.
