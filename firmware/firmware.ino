@@ -9,6 +9,10 @@
 
 const int numGrid = 16;
 const int debugMode = NO_DEBUG; // 0: no debug, 1: read/write debug, 2: stick debug
+const float minX = 763.0;
+const float maxX = 349.0;
+const float minY = 686.0;
+const float maxY = 240.0;
 
 /**************************/
 
@@ -337,7 +341,8 @@ int ubyte2sint(byte val)
 
 float pot2PosX(float potVal)
 {
-  float posVal = -0.0044 * potVal + 2.0911;
+  // float posVal = -0.0044 * potVal + 2.0911;
+  float posVal = 2 / (maxX - minX) * potVal + (minX + maxX) / (minX - maxX);
   if (posVal > 1)
     posVal = 1;
   else if (posVal < -1)
@@ -347,7 +352,8 @@ float pot2PosX(float potVal)
 
 float pot2PosY(float potVal)
 {
-  float posVal = -0.0049 * potVal + 2.6422;
+  // float posVal = -0.0049 * potVal + 2.6422;
+  float posVal = 2 / (maxY - minY) * potVal + (minY + maxY) / (minY - maxY);
   if (posVal > 1)
     posVal = 1;
   else if (posVal < -1)
