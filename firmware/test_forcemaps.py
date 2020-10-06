@@ -13,7 +13,7 @@ def parse_args():
         help="Number of grids for the force map.", required = True)
     parser.add_argument('-f', '--force', type=int,\
         help="Max force value to use. Negative of this value is used for min force value.", required=True)
-    parser.add_argument('-t', '--map-type', type=str, choices=['spring','blackwhole','whitehole', 'wall'],\
+    parser.add_argument('-t', '--map-type', type=str, choices=['spring','blackhole','whitehole', 'wall'],\
         help="Choose which force map to use.", required=True)
     parser.add_argument('-p', '--port', type=str, default='COM26',\
         help="USB port name.")
@@ -73,10 +73,10 @@ def join_as_map(x_data, y_data):
 def create_map(map_type, min_val, max_val, n_grid):
     if map_type == "spring":
         return create_spring_map(min_val, max_val, n_grid)
-    if map_type == "blackwhole":
-        return create_blackwhole_map(min_val, max_val, n_grid)
+    if map_type == "blackhole":
+        return create_blackhole_map(min_val, max_val, n_grid)
     if map_type == "whitehole":
-        return create_whtewhole_map(min_val, max_val, n_grid)
+        return create_whthole_map(min_val, max_val, n_grid)
     if map_type == "wall":
         return create_wall_map(min_val, max_val, n_grid)
 
@@ -94,7 +94,7 @@ def create_spring_map(min_val, max_val, n_grid):
 
     return xv, yv
 
-def create_blackwhole_map(min_val, max_val, n_grid):
+def create_blackhole_map(min_val, max_val, n_grid):
 
     dist = np.linspace(-1, 1, n_grid)
     x = -dist**3
@@ -108,7 +108,7 @@ def create_blackwhole_map(min_val, max_val, n_grid):
 
     return xv, yv
 
-def create_whtewhole_map(min_val, max_val, n_grid):
+def create_whthole_map(min_val, max_val, n_grid):
 
     dist = np.linspace(-1, 1, n_grid)
     x = dist**3

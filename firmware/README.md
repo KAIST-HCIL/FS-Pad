@@ -5,6 +5,13 @@ Set parameters of *firmware.ino*. Then just upload the code to a Teensy board.
 - Size of a force map grid
 - Debug mode
 
+## Calibrating position
+Once you set up the hardware, you should update the potentiometer range in the firmware.
+- In *firmware.ino*, set *debugMode* as *DEBUG_STICK*
+- Open Arduino's Serial monitor.
+- Check the raw potentiometer values (0~1023). Record the min/max values of X/Y axes inside your HW configuration's workspace.
+- In *firmware.ino*, modify the parameters: *minX, maxX, minY, maxY*.
+
 ## Data format
 Every data packet should have a mode indicator byte at the beginning. 'm' is for force map update and 'p' is for force point update.
 
