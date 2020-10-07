@@ -10,12 +10,11 @@ import sys
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-m', '--map-size', type=int,
-                        help="Number of grids for the force map.",
-                        required=True)
+    parser.add_argument('-m', '--map-size', type=int, default=16,
+                        help="Number of grids for the force map.")
     parser.add_argument('-f', '--force', type=int,
-                        help="Max force value to use. \
-                        Negative of this value is used for min force value.",
+                        help="Max force value to use. Negative of \
+                        this value is used for min force value. 0~255",
                         required=True)
     parser.add_argument('-t', '--map-type', type=str,
                         choices=['spring', 'blackhole', 'whitehole', 'wall'],
@@ -26,7 +25,7 @@ def parse_args():
     parser.add_argument('--debug', action='store_true',
                         help="Print output of Teensy")
     parser.add_argument('--test-point', action='store_true',
-                        help="Test force ponit sending")
+                        help="Test force point sending")
 
     if not len(sys.argv) > 1:
         parser.print_help()
