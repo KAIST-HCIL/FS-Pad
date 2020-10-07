@@ -66,4 +66,4 @@ A packet should have the following three values in order.
 collect2: error: ld returned 1 exit status
 Error compiling for board Teensy 3.6.
 ```
-If you see this kind of error, assign global arrays to *static* ([ref])(https://forum.pjrc.com/archive/index.php/t-24449.html).
+If you see this kind of error, assign global arrays to *static* ([ref](https://forum.pjrc.com/archive/index.php/t-24449.html)).
