@@ -6,29 +6,33 @@ import time
 import argparse
 import sys
 
+
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-m', '--map-size', type=int,\
-        help="Number of grids for the force map.", required = True)
-    parser.add_argument('-f', '--force', type=int,\
-        help="Max force value to use. Negative of this value is used for min force value.", required=True)
-    parser.add_argument('-t', '--map-type', type=str, choices=['spring','blackhole','whitehole', 'wall'],\
-        help="Choose which force map to use.", required=True)
-    parser.add_argument('-p', '--port', type=str, default='COM26',\
-        help="USB port name.")
-    parser.add_argument('-b', '--baud-rate', type=int, default=115200,\
-        help="Baudrate of USB.")
-    parser.add_argument('--debug', action='store_true',\
-        help="Print output of Teensy")
-    parser.add_argument('--test-point', action='store_true',\
-        help="Test force ponit sending")
+    parser.add_argument('-m', '--map-size', type=int, default=16,
+                        help="Number of grids for the force map.")
+    parser.add_argument('-f', '--force', type=int,
+                        help="Max force value to use. Negative of \
+                        this value is used for min force value. 0~255",
+                        required=True)
+    parser.add_argument('-t', '--map-type', type=str,
+                        choices=['spring', 'blackhole', 'whitehole', 'wall'],
+                        help="Choose which force map to use.", required=True)
+    parser.add_argument('-p', '--port', type=str, help="USB port name.")
+    parser.add_argument('-b', '--baud-rate', type=int,
+                        default=115200, help="Baudrate of USB.")
+    parser.add_argument('--debug', action='store_true',
+                        help="Print output of Teensy")
+    parser.add_argument('--test-point', action='store_true',
+                        help="Test force point sending")
 
     if not len(sys.argv) > 1:
         parser.print_help()
         sys.exit(-1)
 
     return parser.parse_args()
+
 
 def send_map(ser, force_map):
     flat_data = np.array(force_map, dtype=np.int8).flatten().tolist()
@@ -38,7 +42,7 @@ def send_map(ser, force_map):
     ser.write(bytes_to_write)
 
 
-def send_point(ser, x, y, use_map = 1):
+def send_point(ser, x, y, use_map=1):
     data = [x, y, use_map]
     pack_pattern = '<'+'b'*len(data)
     bytes_to_write = struct.pack(pack_pattern, *data)
@@ -51,10 +55,11 @@ def send_point(ser, x, y, use_map = 1):
             break
     """
 
+
 def join_as_map(x_data, y_data):
-    X = np.expand_dims(np.array(x_data), axis = 2)
-    Y = np.expand_dims(np.array(y_data), axis = 2)
-    F = np.concatenate((X,Y), axis = 2)
+    X = np.expand_dims(np.array(x_data), axis=2)
+    Y = np.expand_dims(np.array(y_data), axis=2)
+    F = np.concatenate((X, Y), axis=2)
     """
         format of F:
 
@@ -69,6 +74,7 @@ def join_as_map(x_data, y_data):
         F[2*(i*n + j)+1] = Y[i,j]
     """
     return F
+
 
 def create_map(map_type, min_val, max_val, n_grid):
     if map_type == "spring":
@@ -94,6 +100,7 @@ def create_spring_map(min_val, max_val, n_grid):
 
     return xv, yv
 
+
 def create_blackhole_map(min_val, max_val, n_grid):
 
     dist = np.linspace(-1, 1, n_grid)
@@ -107,6 +114,7 @@ def create_blackhole_map(min_val, max_val, n_grid):
     yv.astype(int)
 
     return xv, yv
+
 
 def create_whthole_map(min_val, max_val, n_grid):
 
@@ -122,6 +130,7 @@ def create_whthole_map(min_val, max_val, n_grid):
 
     return xv, yv
 
+
 def create_wall_map(min_val, max_val, n_grid):
 
     # range of x and y should be 0 to 1
@@ -135,6 +144,7 @@ def create_wall_map(min_val, max_val, n_grid):
     yv.astype(int)
 
     return xv, yv
+
 
 def show(xv, yv):
 
@@ -164,21 +174,22 @@ def main(args):
     fy = rowv
 
     force_map = join_as_map(fx, fy)
-    ser = serial.Serial(args.port, args.baud_rate, timeout = 1)
+    ser = serial.Serial(args.port, args.baud_rate, timeout=1)
     send_map(ser, force_map)
 
     send_point_toggle = True
     use_map = 1
     while True:
-        #time.sleep(0.1)
+        # time.sleep(0.1)
         if args.test_point:
             if not args.debug:
                 time.sleep(0.1)
             if send_point_toggle:
-                send_point(ser, int(max_force / 2), int(max_force / 2), use_map = use_map)
+                send_point(ser, int(max_force / 2),
+                           int(max_force / 2), use_map=use_map)
                 send_point_toggle = False
             else:
-                send_point(ser, 0, 0, use_map = use_map)
+                send_point(ser, 0, 0, use_map=use_map)
                 send_point_toggle = True
 
         if args.debug:
@@ -191,6 +202,7 @@ def main(args):
 
     ser.close()
 
-if __name__ =='__main__':
+
+if __name__ == '__main__':
     args = parse_args()
     main(args)

@@ -1,9 +1,7 @@
 # FS-Pad Teensy 3.6 firmware
 
-## How to use?
-Set parameters of *firmware.ino*. Then just upload the code to a Teensy board.
-- Size of a force map grid
-- Debug mode
+## Upload the firmware
+Upload the firmware to your Teensy through [Teensyduino](https://www.pjrc.com/teensy/td_download.html).
 
 ## Calibrating position
 Once you set up the hardware, you should update the potentiometer range in the firmware.
@@ -11,6 +9,27 @@ Once you set up the hardware, you should update the potentiometer range in the f
 - Open Arduino's Serial monitor.
 - Check the raw potentiometer values (0~1023). Record the min/max values of X/Y axes inside your HW configuration's workspace.
 - In *firmware.ino*, modify the parameters: *minX, maxX, minY, maxY*.
+
+## Map Test
+
+The map test code [test_forcemaps.py](test_forcemaps.py) can make various kinds of force maps. It shows visualization of a force map and sends it to the Teensy board.
+
+### Quick Start
+Below is an example of simulating a spring thumbstick on the FS-Pad.
+
+Be sure to use your port number instead of COM26.
+
+Windows:
+```console
+$ python -m venv venv
+$ venv\Scripts\activate
+(venv) $ python -m pip install -r requirements.txt
+(venv) $ python .\test_forcemaps.py -f 60 -t spring -p COM26
+```
+Output:
+![](/images/test_example.jpg)
+
+You can directly setup your environment instead of using [venv](https://docs.python.org/3/tutorial/venv.html).
 
 ## Data format
 Every data packet should have a mode indicator byte at the beginning. 'm' is for force map update and 'p' is for force point update.
@@ -39,27 +58,6 @@ A packet should have the following three values in order.
 - force value of y direction
 - whether to use a saved force map or not (0 = not use, 1 = use)
 
-## Test
-### Data send and recv test
-Set the firmware to debug mode and Use [test_data_send.py](test_data_send.py). The firmware echoes data sent from the python script
-
-### Speed test
-The speed test is done with [test_speed.py](test_speed.py). The firmware sends a success code 's' when it receives whole data and updates the force map. The test code sends a random map and measures until it gets the success code. The code repeats 100 times and calculates an average.
-
-#### Result 1
-Ubuntu 16.04
-
-| Size of map   | Time per a map (ms) |
-| ------------- | -------------             |
-| 8 X 8     | 0.733  |
-| 16 X 16   | 3.857 |
-| 32 X 32   | 18.084 |
-| 64 X 64   | 48.164 |
-| 128 X 128   | 177.899 |
-
-### Map Test
-The map test code [test_forcemaps.py](test_forcemaps.py) can make various kinds of force maps. It shows visualization of a force map and sends it to a Teensy board.
-
 ## Troubleshooting
 ### Out of RAM
 ```shell
@@ -68,4 +66,4 @@ The map test code [test_forcemaps.py](test_forcemaps.py) can make various kinds 
 collect2: error: ld returned 1 exit status
 Error compiling for board Teensy 3.6.
 ```
-If you see this kind of error, assign global arrays to *static* ([ref])(https://forum.pjrc.com/archive/index.php/t-24449.html).
+If you see this kind of error, assign global arrays to *static* ([ref](https://forum.pjrc.com/archive/index.php/t-24449.html)).
