@@ -27,7 +27,7 @@ $ venv\Scripts\activate
 (venv) $ python .\test_forcemaps.py -f 60 -t spring -p COM26
 ```
 Output:
-
+![](/images/test_example.jpg)
 
 You can directly setup your environment instead of using [venv](https://docs.python.org/3/tutorial/venv.html).
 
