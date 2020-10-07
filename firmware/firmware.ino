@@ -13,6 +13,8 @@ const float minX = 763.0;
 const float maxX = 349.0;
 const float minY = 686.0;
 const float maxY = 240.0;
+const float motorXGain = 1.0; // Scales the final output of motor X to balance both motors
+const float motorYGain = 0.6; // Scales the final output of motor Y to balance both motors
 
 /**************************/
 
@@ -389,11 +391,13 @@ void interpForceMap(float x, float y, int& outputX, int& outputY)
 
 void forceStickX(int val)
 {
+  val = (int)((float)val * motorXGain);
   forceStick(vcaXP, vcaXE, val, HIGH);
 }
 
 void forceStickY(int val)
 {
+  val = (int)((float)val * motorYGain);
   forceStick(vcaYP, vcaYE, val, HIGH);
 }
 
