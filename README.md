@@ -7,6 +7,9 @@ You can now feel the external force through your hands when your car crashes, wh
 <br>
 This is an open source project. Anyone can customize, test, and play with these tiny modules.
 
+  - Video preview: https://youtu.be/CJSe5nMkmYE
+  - Game interactions video: https://youtu.be/d1z8tTswZFI
+  
 [Paper] [Citation format]
 > To be added.
 
