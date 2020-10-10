@@ -10,8 +10,9 @@ This is an open source project. Anyone can customize, test, and play with these 
   - Video preview: https://youtu.be/CJSe5nMkmYE
   - Game interactions video: https://youtu.be/d1z8tTswZFI
   
-[Paper] [Citation format]
-> To be added.
+This work was presented in [UIST 2020](https://uist.acm.org/uist2020/). You could check out game interaction scenarios & device specification on the paper.
+
+[[Paper]](/FS-Pad.pdf)
 
 ## FS Module
 ![](/images/assembly_stopmotion.gif)
