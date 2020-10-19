@@ -321,18 +321,9 @@ void sendControllerState()
 {
   if (debugMode == NO_DEBUG)
   {
-    Serial.print(posX);
-    Serial.print(',');
-    Serial.print(posY);
-    Serial.print(',');
-    Serial.print(btnA);
-    Serial.print(',');
-    Serial.print(btnB);
-    Serial.print(',');
-    Serial.print(btnX);
-    Serial.print(',');
-    Serial.print(btnY);
-    Serial.print('\n');
+    char line[18];
+    sprintf(line, "%.2f,%.2f,%d,%d,%d,%d\n", posX, posY, btnA, btnB, btnX, btnY);
+    Serial.print(line);
   }
 }
 
