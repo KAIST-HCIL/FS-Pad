@@ -340,7 +340,7 @@ float pot2PosX(float potVal)
     posVal = 1;
   else if (posVal < -1)
     posVal = -1;
-  return posVal;
+  return -posVal;
 }
 
 float pot2PosY(float potVal)
@@ -351,7 +351,7 @@ float pot2PosY(float potVal)
     posVal = 1;
   else if (posVal < -1)
     posVal = -1;
-  return posVal;
+  return -posVal;
 }
 
 void interpForceMap(float x, float y, int& outputX, int& outputY)
